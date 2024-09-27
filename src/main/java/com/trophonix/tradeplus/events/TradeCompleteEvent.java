@@ -11,18 +11,18 @@ import org.bukkit.event.HandlerList;
 @Getter
 public class TradeCompleteEvent extends Event {
 
-  private static final HandlerList handlers = new HandlerList();
+    private static final HandlerList handlers = new HandlerList();
 
-  private final TradeLog trade;
-  private final Player playerOne;
-  private final Player playerTwo;
+    private final TradeLog trade;
+    private final Player playerOne;
+    private final Player playerTwo;
 
-  public static HandlerList getHandlerList() {
-    return handlers;
-  }
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 
-  @Override
-  public HandlerList getHandlers() {
-    return handlers;
-  }
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
 }

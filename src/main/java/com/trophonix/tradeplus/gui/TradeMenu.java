@@ -9,9 +9,9 @@ import java.util.Map;
 @Getter
 public class TradeMenu {
 
-  private Inventory inventory;
-  private Player player;
-  private TradeMenu partner;
+    private Inventory inventory;
+    private Player player;
+    private TradeMenu partner;
 
-  private Map<Integer, MenuButton> buttons;
+    private Map<Integer, MenuButton> buttons;
 }

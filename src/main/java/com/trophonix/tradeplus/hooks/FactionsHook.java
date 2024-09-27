@@ -5,21 +5,21 @@ import org.bukkit.entity.Player;
 
 public class FactionsHook {
 
-  private static boolean massiveCraft;
+    private static boolean massiveCraft;
 
-  static {
-    try {
-      Class.forName("com.massivecraft.factions.FPlayers");
-      massiveCraft = true;
-    } catch (Exception ignored) {
-      massiveCraft = false;
+    static {
+        try {
+            Class.forName("com.massivecraft.factions.FPlayers");
+            massiveCraft = true;
+        } catch (Exception ignored) {
+            massiveCraft = false;
+        }
     }
-  }
 
-  public static boolean isPlayerInEnemyTerritory(Player player) {
-    if (massiveCraft) {
-      return MassiveCraftFactionsHook.isPlayerInEnemyTerritory(player);
+    public static boolean isPlayerInEnemyTerritory(Player player) {
+        if (massiveCraft) {
+            return MassiveCraftFactionsHook.isPlayerInEnemyTerritory(player);
+        }
+        return false;
     }
-    return false;
-  }
 }
