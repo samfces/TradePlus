@@ -6,7 +6,6 @@ import com.trophonix.tradeplus.trade.Trade;
 import com.trophonix.tradeplus.util.ItemFactory;
 import com.trophonix.tradeplus.util.MsgUtils;
 import com.trophonix.tradeplus.util.Sounds;
-import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.conversations.*;
@@ -31,7 +30,6 @@ public abstract class Extra implements Listener {
     double increment1;
     double increment2;
     private Conversation convo1, convo2;
-    @Getter
     private final String displayName;
     private final TradePlus pl;
     private double max1;
@@ -269,4 +267,8 @@ public abstract class Extra implements Listener {
     protected abstract ItemStack _getIcon(Player player);
 
     protected abstract ItemStack _getTheirIcon(Player player);
+
+    public String getName() {
+        return name;
+    }
 }

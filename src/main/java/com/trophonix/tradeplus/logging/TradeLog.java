@@ -1,8 +1,6 @@
 package com.trophonix.tradeplus.logging;
 
 import com.trophonix.tradeplus.util.ItemFactory;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
@@ -10,7 +8,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@Getter
 public class TradeLog implements PostProcessor {
 
     private Trader player1, player2;
@@ -39,14 +36,40 @@ public class TradeLog implements PostProcessor {
         this.time = new Date();
     }
 
+    public Trader getPlayer1() {
+        return player1;
+    }
+
+    public Trader getPlayer2() {
+        return player2;
+    }
+
+    public List<ItemFactory> getPlayer1Items() {
+        return player1Items;
+    }
+
+    public List<ItemFactory> getPlayer2Items() {
+        return player2Items;
+    }
+
+    public List<ExtraOffer> getPlayer1ExtraOffers() {
+        return player1ExtraOffers;
+    }
+
+    public List<ExtraOffer> getPlayer2ExtraOffers() {
+        return player2ExtraOffers;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
     @Override
     public void doPostProcessing() {
         player1.updateName();
         player2.updateName();
     }
 
-    @Getter
-    @AllArgsConstructor
     public static class Trader {
 
         private UUID uniqueId;
@@ -57,9 +80,21 @@ public class TradeLog implements PostProcessor {
             if (op.getName() == null) lastKnownName = "unknown";
             else lastKnownName = op.getName();
         }
+
+        public Trader(UUID uniqueId, String lastKnownName) {
+            this.uniqueId = uniqueId;
+            this.lastKnownName = lastKnownName;
+        }
+
+        public UUID getUniqueId() {
+            return uniqueId;
+        }
+
+        public String getLastKnownName() {
+            return lastKnownName;
+        }
     }
 
-    @Getter
     public static class ExtraOffer {
 
         private String id;
@@ -71,6 +106,14 @@ public class TradeLog implements PostProcessor {
         public ExtraOffer(String id, double value) {
             this.id = id;
             this.value = value;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public double getValue() {
+            return value;
         }
     }
 }

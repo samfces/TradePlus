@@ -4,7 +4,6 @@ import com.trophonix.tradeplus.TradePlus;
 import com.trophonix.tradeplus.util.ItemFactory;
 import com.trophonix.tradeplus.util.MsgUtils;
 import com.trophonix.tradeplus.util.Sounds;
-import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -17,7 +16,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Getter
 public class TradePlusConfig {
 
     private final TradePlus plugin;
@@ -1099,5 +1097,433 @@ public class TradePlusConfig {
         }
 
         config.set("configversion", Double.parseDouble(plugin.getDescription().getVersion()));
+    }
+
+    public TradePlus getPlugin() {
+        return plugin;
+    }
+
+    public File getConfigFile() {
+        return configFile;
+    }
+
+    public FileConfiguration getConfig() {
+        return config;
+    }
+
+    public File getLangFile() {
+        return langFile;
+    }
+
+    public FileConfiguration getLang() {
+        return lang;
+    }
+
+    public File getGuiFile() {
+        return guiFile;
+    }
+
+    public FileConfiguration getGui() {
+        return gui;
+    }
+
+    public List<String> getAliases() {
+        return aliases;
+    }
+
+    public boolean isTradeCompatMode() {
+        return tradeCompatMode;
+    }
+
+    public boolean isTradeLogs() {
+        return tradeLogs;
+    }
+
+    public boolean isAllowSameIpTrade() {
+        return allowSameIpTrade;
+    }
+
+    public boolean isPermissionsRequired() {
+        return permissionsRequired;
+    }
+
+    public String getSendPermission() {
+        return sendPermission;
+    }
+
+    public String getAcceptPermission() {
+        return acceptPermission;
+    }
+
+    public int getRequestCooldownSeconds() {
+        return requestCooldownSeconds;
+    }
+
+    public boolean isAllowTradeInCreative() {
+        return allowTradeInCreative;
+    }
+
+    public boolean isAllowShiftRightClick() {
+        return allowShiftRightClick;
+    }
+
+    public List<String> getItemBlacklist() {
+        return itemBlacklist;
+    }
+
+    public boolean isDenyNamedItems() {
+        return denyNamedItems;
+    }
+
+    public List<String> getLoreBlacklist() {
+        return loreBlacklist;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public double getSameWorldRange() {
+        return sameWorldRange;
+    }
+
+    public double getCrossWorldRange() {
+        return crossWorldRange;
+    }
+
+    public boolean isAllowCrossWorld() {
+        return allowCrossWorld;
+    }
+
+    public List<String> getBlockedWorlds() {
+        return blockedWorlds;
+    }
+
+    public int getAntiscamCountdown() {
+        return antiscamCountdown;
+    }
+
+    public boolean isAntiscamCancelOnChange() {
+        return antiscamCancelOnChange;
+    }
+
+    public boolean isPreventChangeOnAccept() {
+        return preventChangeOnAccept;
+    }
+
+    public boolean isDiscrepancyDetection() {
+        return discrepancyDetection;
+    }
+
+    public boolean isEndDisplayEnabled() {
+        return endDisplayEnabled;
+    }
+
+    public int getEndDisplayTimer() {
+        return endDisplayTimer;
+    }
+
+    public boolean isSpectateEnabled() {
+        return spectateEnabled;
+    }
+
+    public boolean isSpectateBroadcast() {
+        return spectateBroadcast;
+    }
+
+    public String getGuiTitle() {
+        return guiTitle;
+    }
+
+    public String getSpectatorTitle() {
+        return spectatorTitle;
+    }
+
+    public List<Integer> getMySlots() {
+        return mySlots;
+    }
+
+    public List<Integer> getTheirSlots() {
+        return theirSlots;
+    }
+
+    public List<Integer> getMyExtraSlots() {
+        return myExtraSlots;
+    }
+
+    public List<Integer> getTheirExtraSlots() {
+        return theirExtraSlots;
+    }
+
+    public ItemFactory getForce() {
+        return force;
+    }
+
+    public ItemFactory getAccept() {
+        return accept;
+    }
+
+    public ItemFactory getCancel() {
+        return cancel;
+    }
+
+    public ItemFactory getComplete() {
+        return complete;
+    }
+
+    public ItemFactory getCancelled() {
+        return cancelled;
+    }
+
+    public ItemFactory getTheirAccept() {
+        return theirAccept;
+    }
+
+    public ItemFactory getTheirCancel() {
+        return theirCancel;
+    }
+
+    public ItemFactory getSeparator() {
+        return separator;
+    }
+
+    public ItemFactory getPlaceholder() {
+        return placeholder;
+    }
+
+    public int getForceSlot() {
+        return forceSlot;
+    }
+
+    public int getAcceptSlot() {
+        return acceptSlot;
+    }
+
+    public int getTheirAcceptSlot() {
+        return theirAcceptSlot;
+    }
+
+    public boolean isForceEnabled() {
+        return forceEnabled;
+    }
+
+    public boolean isAcceptEnabled() {
+        return acceptEnabled;
+    }
+
+    public boolean isHeadEnabled() {
+        return headEnabled;
+    }
+
+    public String getHeadDisplayName() {
+        return headDisplayName;
+    }
+
+    public String getExtrasTypePrefix() {
+        return extrasTypePrefix;
+    }
+
+    public String getExtrasTypeEmpty() {
+        return extrasTypeEmpty;
+    }
+
+    public String getExtrasTypeValid() {
+        return extrasTypeValid;
+    }
+
+    public String getExtrasTypeInvalid() {
+        return extrasTypeInvalid;
+    }
+
+    public String getExtrasTypeMaximum() {
+        return extrasTypeMaximum;
+    }
+
+    public boolean isFactionsAllowTradeInEnemyTerritory() {
+        return factionsAllowTradeInEnemyTerritory;
+    }
+
+    public boolean isWorldguardTradingFlag() {
+        return worldguardTradingFlag;
+    }
+
+    public boolean isSoundEffectsEnabled() {
+        return soundEffectsEnabled;
+    }
+
+    public boolean isSoundOnChange() {
+        return soundOnChange;
+    }
+
+    public boolean isSoundOnAccept() {
+        return soundOnAccept;
+    }
+
+    public boolean isSoundOnComplete() {
+        return soundOnComplete;
+    }
+
+    public boolean isSoundOnCountdown() {
+        return soundOnCountdown;
+    }
+
+    public boolean isExcessChest() {
+        return excessChest;
+    }
+
+    public String getExcessTitle() {
+        return excessTitle;
+    }
+
+    public boolean isDebugMode() {
+        return debugMode;
+    }
+
+    public ConfigMessage getRequestSent() {
+        return requestSent;
+    }
+
+    public ConfigMessage getRequestReceived() {
+        return requestReceived;
+    }
+
+    public ConfigMessage getTradingDisabled() {
+        return tradingDisabled;
+    }
+
+    public ConfigMessage getTradingEnabled() {
+        return tradingEnabled;
+    }
+
+    public ConfigMessage getErrorsCreative() {
+        return errorsCreative;
+    }
+
+    public ConfigMessage getErrorsCreativeThem() {
+        return errorsCreativeThem;
+    }
+
+    public ConfigMessage getErrorsSameIp() {
+        return errorsSameIp;
+    }
+
+    public ConfigMessage getErrorsBlockedWorld() {
+        return errorsBlockedWorld;
+    }
+
+    public ConfigMessage getErrorsSameWorldRange() {
+        return errorsSameWorldRange;
+    }
+
+    public ConfigMessage getErrorsCrossWorldRange() {
+        return errorsCrossWorldRange;
+    }
+
+    public ConfigMessage getErrorsNoCrossWorld() {
+        return errorsNoCrossWorld;
+    }
+
+    public ConfigMessage getAcceptSender() {
+        return acceptSender;
+    }
+
+    public ConfigMessage getAcceptReceiver() {
+        return acceptReceiver;
+    }
+
+    public ConfigMessage getCancelledMessage() {
+        return cancelledMessage;
+    }
+
+    public ConfigMessage getExpired() {
+        return expired;
+    }
+
+    public ConfigMessage getErrorsWaitForExpire() {
+        return errorsWaitForExpire;
+    }
+
+    public ConfigMessage getErrorsPlayerNotFound() {
+        return errorsPlayerNotFound;
+    }
+
+    public ConfigMessage getErrorsSelfTrade() {
+        return errorsSelfTrade;
+    }
+
+    public ConfigMessage getErrorsInvalidUsage() {
+        return errorsInvalidUsage;
+    }
+
+    public ConfigMessage getErrorsTradingDisabled() {
+        return errorsTradingDisabled;
+    }
+
+    public ConfigMessage getErrorsNoPermsAccept() {
+        return errorsNoPermsAccept;
+    }
+
+    public ConfigMessage getErrorsNoPermsSend() {
+        return errorsNoPermsSend;
+    }
+
+    public ConfigMessage getErrorsNoPermsReceive() {
+        return errorsNoPermsReceive;
+    }
+
+    public ConfigMessage getErrorsNoPermsAdmin() {
+        return errorsNoPermsAdmin;
+    }
+
+    public ConfigMessage getTradeComplete() {
+        return tradeComplete;
+    }
+
+    public ConfigMessage getForcedTrade() {
+        return forcedTrade;
+    }
+
+    public ConfigMessage getTheyDenied() {
+        return theyDenied;
+    }
+
+    public ConfigMessage getYouDenied() {
+        return youDenied;
+    }
+
+    public ConfigMessage getSpectateMessage() {
+        return spectateMessage;
+    }
+
+    public ConfigMessage getDiscrepancyDetected() {
+        return discrepancyDetected;
+    }
+
+    public ConfigMessage getAdminConfigReloaded() {
+        return adminConfigReloaded;
+    }
+
+    public ConfigMessage getAdminInvalidPlayers() {
+        return adminInvalidPlayers;
+    }
+
+    public ConfigMessage getAdminForcedTrade() {
+        return adminForcedTrade;
+    }
+
+    public ConfigMessage getAdminPlayersOnly() {
+        return adminPlayersOnly;
+    }
+
+    public ConfigMessage getAdminNoTrade() {
+        return adminNoTrade;
+    }
+
+    public ConfigMessage getFactionsEnemyTerritory() {
+        return factionsEnemyTerritory;
+    }
+
+    public ConfigMessage getWorldguardTradingNotAllowed() {
+        return worldguardTradingNotAllowed;
     }
 }

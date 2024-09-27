@@ -13,7 +13,6 @@ import com.trophonix.tradeplus.trade.Trade;
 import com.trophonix.tradeplus.util.InvUtils;
 import com.trophonix.tradeplus.util.PlayerUtil;
 import com.trophonix.tradeplus.util.Sounds;
-import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,15 +30,12 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class TradePlus extends JavaPlugin implements Listener {
 
     public ConcurrentLinkedQueue<Trade> ongoingTrades = new ConcurrentLinkedQueue<>();
-    @Getter
     private TaskChainFactory taskFactory;
 
-    @Getter
     private TradePlusConfig tradeConfig;
 
 //  private CommandHandler commandHandler;
 
-    @Getter
     private List<Inventory> excessChests;
 
     private Logs logs;
@@ -150,4 +146,18 @@ public class TradePlus extends JavaPlugin implements Listener {
     public Logs getLogs() {
         return logs;
     }
+
+    public TradePlusConfig getTradeConfig() {
+        return tradeConfig;
+    }
+
+    public TaskChainFactory getTaskFactory() {
+        return taskFactory;
+    }
+
+    public List<Inventory> getExcessChests() {
+        return excessChests;
+    }
+
+
 }

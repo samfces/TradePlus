@@ -1,12 +1,10 @@
 package com.trophonix.tradeplus.gui;
 
-import lombok.Getter;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 import java.util.Map;
 
-@Getter
 public class TradeMenu {
 
     private Inventory inventory;
@@ -14,4 +12,20 @@ public class TradeMenu {
     private TradeMenu partner;
 
     private Map<Integer, MenuButton> buttons;
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public TradeMenu getPartner() {
+        return partner;
+    }
+
+    public Map<Integer, MenuButton> getButtons() {
+        return buttons;
+    }
 }

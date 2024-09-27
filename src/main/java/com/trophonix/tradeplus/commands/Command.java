@@ -1,6 +1,5 @@
 package com.trophonix.tradeplus.commands;
 
-import lombok.Getter;
 import org.bukkit.command.CommandSender;
 
 import java.util.Collections;
@@ -8,7 +7,6 @@ import java.util.List;
 
 public abstract class Command {
 
-    @Getter
     private final List<String> aliases;
 
     Command(List<String> aliases) {
@@ -23,5 +21,9 @@ public abstract class Command {
 
     public List<String> onTabComplete(CommandSender sender, String[] args, String full) {
         return Collections.emptyList();
+    }
+
+    public List<String> getAliases() {
+        return aliases;
     }
 }

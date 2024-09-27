@@ -2,7 +2,6 @@ package com.trophonix.tradeplus.util;
 
 import com.google.common.base.Preconditions;
 import com.trophonix.tradeplus.TradePlus;
-import lombok.Getter;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 
 public class ItemFactory {
 
-    @Getter
     private final ItemStack stack;
 
     public ItemFactory(Material material) {
@@ -103,6 +101,10 @@ public class ItemFactory {
 
             stack.setItemMeta(meta);
         }
+    }
+
+    public ItemStack getStack() {
+        return stack;
     }
 
     static ItemStack getPlayerSkull(Player player, String displayName) {

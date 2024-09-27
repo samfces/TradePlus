@@ -1,7 +1,6 @@
 package com.trophonix.tradeplus.commands;
 
 import com.trophonix.tradeplus.TradePlus;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,7 +13,6 @@ import java.util.List;
 
 public class CommandHandler implements Listener, CommandExecutor {
 
-    @Getter
     private final List<Command> commands = new ArrayList<>();
 
     public CommandHandler(TradePlus pl, boolean compatMode) {
@@ -85,5 +83,9 @@ public class CommandHandler implements Listener, CommandExecutor {
         }
 
         protected abstract List<String> getCompletions(CommandSender sender, String command, String[] args, String buffer);
+    }
+
+    public List<Command> getCommands() {
+        return commands;
     }
 }

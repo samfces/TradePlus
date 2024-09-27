@@ -8,7 +8,6 @@ import com.trophonix.tradeplus.util.InvUtils;
 import com.trophonix.tradeplus.util.ItemFactory;
 import com.trophonix.tradeplus.util.MsgUtils;
 import com.trophonix.tradeplus.util.Sounds;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -38,7 +37,6 @@ import java.util.stream.Collectors;
 
 public class Trade implements Listener {
 
-    @Getter
     public final Player player1, player2;
     private final TradePlus pl = TradePlus.getPlugin(TradePlus.class);
     private final List<Extra> extras = new ArrayList<>();
@@ -46,7 +44,6 @@ public class Trade implements Listener {
     private final long startTime = System.currentTimeMillis();
     private List<Integer> mySlots, theirSlots, myExtraSlots, theirExtraSlots;
     private boolean cancelOnClose1 = true, cancelOnClose2 = true;
-    @Getter
     private Inventory spectatorInv, inv1, inv2;
     private boolean accept1, accept2;
     private final Location location1;
@@ -54,7 +51,6 @@ public class Trade implements Listener {
     private ItemStack[] accepted1, accepted2;
     private boolean forced = false;
     private BukkitTask task;
-    @Getter
     private boolean cancelled;
     private EntityPickupItemEventListener entityPickupListener;
 
@@ -168,6 +164,30 @@ public class Trade implements Listener {
                             player2.openInventory(inv2);
                         })
                 .execute();
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public Inventory getSpectatorInv() {
+        return spectatorInv;
+    }
+
+    public Inventory getInv1() {
+        return inv1;
+    }
+
+    public Inventory getInv2() {
+        return inv2;
+    }
+
+    public boolean isCancelled() {
+        return cancelled;
     }
 
     private static List<ItemStack> combine(ItemStack[] items) {
@@ -1156,4 +1176,6 @@ public class Trade implements Listener {
                     .forEach(p -> Sounds.click((Player) p, 2));
         }
     }
+
+
 }
